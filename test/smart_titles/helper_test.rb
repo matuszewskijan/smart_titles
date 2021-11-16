@@ -6,7 +6,7 @@ class SmartTitlesHelperTest < ActionView::TestCase
   # This makes content_for work, maybe there is a better way
   def setup
     super
-    @av = ActionView::Base.new
+    @av = ActionView::Base.new(ActionController::Base.view_paths, {}, {})
     @view_flow = ActionView::OutputFlow.new
   end
 
