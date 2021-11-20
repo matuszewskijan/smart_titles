@@ -15,7 +15,6 @@ class SmartTitlesHelperTest < ActionView::TestCase
     I18n.backend.reload!
   end
 
-
   def test_custom_title
     store_layout_title
     store_page_title
@@ -41,7 +40,6 @@ class SmartTitlesHelperTest < ActionView::TestCase
   def test_no_title
     assert_nil title
   end
-
 
   def test_head_title_with_custom_title
     store_layout_title
@@ -108,7 +106,6 @@ class SmartTitlesHelperTest < ActionView::TestCase
     assert_equal "d New post b", head_title
   end
 
-
   def test_head_title_template_is_escaped
     store_translations title_template: '"%{title}"'
     title 'New post'
@@ -120,7 +117,6 @@ class SmartTitlesHelperTest < ActionView::TestCase
     assert_equal 'New &quot;post&quot;', h(head_title)
     assert_equal '<h1>New &quot;post&quot;</h1>', h(result)
   end
-
 
 private
 

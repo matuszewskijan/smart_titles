@@ -38,7 +38,7 @@ module SmartTitles
 
       title = custom_title
       catch(:exception) do
-        title ||= t('.title', **options.merge(throw: true))
+        title ||= t('.title', **options.merge(throw: true, default: nil))
       end
 
       provide(:page_title, title && title.html_safe) # "provide" already escapes
